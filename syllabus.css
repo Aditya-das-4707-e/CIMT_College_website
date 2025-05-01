@@ -1,0 +1,254 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --accent: #3498db;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --text: #333;
+    --text-light: #7f8c8d;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Hero Section */
+.syllabus-hero {
+    height: 60vh;
+    min-height: 400px;
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)),
+        url("Syllabus.png") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.syllabus-hero-content {
+    width: 100%;
+    animation: fadeInUp 1s ease;
+}
+
+.syllabus-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Syllabus Section */
+.syllabus-section {
+    padding: 6rem 0;
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.section-title p {
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--accent);
+    margin: 1.5rem auto;
+    border-radius: 2px;
+}
+
+.syllabus-table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.table-header {
+    display: flex;
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.header-item {
+    padding: 1.2rem 1.5rem;
+    flex: 1;
+    text-align: left;
+}
+
+.header-item:first-child {
+    flex: 2;
+}
+
+.table-row {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-row:hover {
+    background: rgba(52, 152, 219, 0.05);
+}
+
+.table-cell {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table-cell:first-child {
+    flex: 2;
+}
+
+.program-name h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.program-name p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.duration {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background: var(--accent);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    width: fit-content;
+}
+
+.download-btn i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.download-btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Info Section */
+.info-section {
+    padding: 6rem 0;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-content h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.info-content p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.info-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.info-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transition);
+}
+
+.info-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .info-container {
+        flex-direction: column;
+    }
+    
+    .header-item:first-child,
+    .table-cell:first-child {
+        flex: 1.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .syllabus-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .table-header {
+        display: none;
+    }
+    
+    .table-row {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+    
+    .table-cell {
+        padding: 0.5rem 0;
+    }
+    
+    .download {
+        padding-top: 1rem;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
